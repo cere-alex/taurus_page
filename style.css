@@ -1,0 +1,364 @@
+* {
+  font-family: 'Sen', sans-serif;
+  font-size: 100;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: no-wrap;
+  height: 100vh;
+}
+
+/* Sector header  */
+
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  background: linear-gradient(to right, #900, gold);
+  min-height: 70px;
+  max-height: 80px;
+  box-shadow: 0px 0px 10px #222;
+}
+
+@media only screen and (max-width: 700px){
+  header {
+    min-height: 90px;
+    max-height: 300px;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding-bottom: 0;
+    align-items: center;
+  }
+  .nombre-menu {
+    display: none;
+  }
+  .contendor__div-logo {
+    display: none;
+  }
+
+  header ul {
+    width: 90vw;
+    justify-items: baseline;
+  }
+  header ul li {
+    font-size: 20px;
+    padding-bottom: 0px !important;
+  }
+}
+
+.contendor__div-logo img{
+  min-width: 70px;
+  max-height: 80px;
+}
+
+header ul {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  align-items: flex-end;
+  /*flex-basis: 800px;*/
+}
+
+header ul li{
+  /*margin: 0.5em;*/
+  display: inline-block;
+  padding: 10px;
+  transition: background .2s;
+}
+
+header ul li:hover {
+  cursor: pointer;
+  background: rgba(200,100,50,.8);
+}
+
+header ul li a {
+  left: 0;
+  color: white;
+  text-decoration: none;
+  transition: 1s;
+}
+
+.contendor__ul-whatsapp, .contendor__ul-facebook {
+  /*padding: 5px;*/
+  font-size: 30px;
+  text-decoration: none;
+}
+
+.fa-whatsapp {
+  background: #0DBB41;
+  color: white;
+  /*border-radius: 15px;*/
+}
+
+.fa-facebook-square {
+  background: white;
+  color: #0B82E7;
+  border-radius: 5px;
+  margin: 0;
+}
+
+.fa-instagram {
+  background: linear-gradient(to right, #574DC1, #DD435E);
+  color: white;
+  border-radius: 15px;
+}
+
+/* sector main*/
+
+main  {
+  overflow: auto;
+  background: white;
+  padding: 0;
+  text-align: justify;
+}
+
+
+.bg-inicio {
+  background-image: url(./img/gimnasia_taurus.jpg);
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+#inicio {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+
+.contendor-video {
+  position: relative;
+  border: 3px solid black;
+  width: 100%;
+  height: 40%;
+}
+
+video {
+  position: absolute;
+  object-fit: cover;
+  top: 0px;
+  width: 100%;
+  height: 400px;
+  text-align: center;
+  left: 0;
+  z-index: 0;
+}
+
+#inicio .inicio__h2{
+  background: rgba(200,100,0,0.5);
+  text-align: center;
+  min-width: 100px;
+  max-width: 450px;
+  animation-name: mv__hdos;
+  animation-duration: 2s;
+  z-index: 2;
+} 
+
+@keyframes mv__hdos {
+  0% {
+    margin-left: -200px;
+  }
+  100% {
+    margin-left: 0px;
+  }
+}
+
+#inicio .inicio__img {
+  margin: 10px;
+  max-width: 500px;
+  min-width: 200px;
+  border: 2px solid black;
+  animation-name: mv__img;
+  animation-duration: 2s;
+  z-index: 2;
+}
+
+
+@keyframes mv__img {
+  0% {
+    margin-right: -500px;
+    
+  }
+
+  100% {
+    margin-right: 0px;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  #inicio {
+    flex-direction: column-reverse;
+    justify-content: center;
+  }
+  
+  #inicio .inicio__img {
+    width: 70%;
+  }
+}
+
+
+.bg-horarios {
+  background-image: url(./img/parada-de-manos.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+#horarios {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+}
+
+.horarios__gimnasia, .horarios__calistenia {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+  background: #900;
+  opacity: 0.7
+  /*background: rgba(250,100,0,.8);*/
+}
+
+.horarios__gimnasia .gimnasia_horario {
+  color: white;
+  flex-basis: 45vw;
+  text-align: center;
+  font-size: 30px;
+}
+
+.horarios__gimnasia .gimnasia_tabla {
+  color: white;
+  flex-basis: 45vw;
+  font-size: 25px;
+}
+
+.horarios__calistenia .calistenia_horarios {
+  color: white;
+  flex-basis: 45vw;
+  text-align: center;
+  font-size: 30px;
+}
+
+.horarios__calistenia .calistenia_tabla {
+  color: white;
+  flex-basis: 45vw;
+  font-size: 25px;
+}
+
+@media only screen and (max-width: 800px) {
+  .horarios__gimnasia, .horarios__calistenia {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-items: center;
+    align-items: center;
+  }
+  .horarios__gimnasia .gimnasia_horario, .horarios__gimnasia .gimnasia_tabla {
+    font-size: 20px;
+    flex-basis: 0px;
+    margin: 15px;
+    /*padding: 0px 0px;*/
+  }
+
+  .horarios__calistenia .calistenia_horarios, .horarios__calistenia .calistenia_tabla {
+    font-size: 20px;
+    flex-basis: 0px;
+    margin: 15px;
+  }
+
+}
+
+
+
+/* Estilo de la tienda*/
+
+.bg-tienda {
+  background-image: url(./img/maquinas.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+
+
+#tienda {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+}
+
+.item__tienda {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+
+}
+
+.item__tienda .imagen {
+  width: 15vw;
+}
+
+.item__tienda .descripcion {
+  width: 10vw;
+  padding: 20px;
+}
+/*Localizacion de mapa*/
+
+#contactos {
+  background: linear-gradient(to bottom, #900, gold);
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.contenedor-direccion, .api-facebook, .mapa {
+  padding: 20px;
+}
+
+.contenedor-direccion h2, .contenedor-direccion p{
+  color: white;
+  font-size: 18px;
+
+}
+
+.api-facebook {
+  width: 340px;
+  height: 500px;
+  /*border: 2px solid black;*/
+}
+
+.mapa {
+  width: 340px;
+  height: 500px;
+  /*border: 2px solid black;*/
+}
+
+footer {
+  margin-top: auto;
+  padding: 10px;
+  background: linear-gradient(to right, gold, #900);
+  box-shadow: 0px 0px 10px #333; 
+}
